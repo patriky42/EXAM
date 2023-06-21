@@ -6,7 +6,7 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 12:31:45 by pabastid          #+#    #+#             */
-/*   Updated: 2023/05/31 12:59:50 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/06/19 12:43:25 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	epur_str(char *str)
 			i++;
 		else if ((str[i] == ' ' || str[i] == '\t') && (str[i + 1] != ' ' && str[i + 1] != '\0'))
 		{
-			write (1, &str[i], 1);
+			write (1, " ", 1);
 			i++;
 		}
 		else if ((str[i] == ' ' || str[i] == '\t') && (str[i + 1] == '\0'))

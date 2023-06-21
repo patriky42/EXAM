@@ -6,7 +6,7 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 08:46:27 by pabastid          #+#    #+#             */
-/*   Updated: 2023/05/23 10:03:55 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/06/19 12:55:40 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	expand_str(char *str)
 			write (1, &str[i], 1);
 			i++;
 		}
-		else if ((str[i] == 32 || str[i] == 9) && (str[i + 1] != '\0'))
+		else if (str[i] == 32 || str[i] == 9)
 		{
 			write (1, "   ", 3);
 			i++;
