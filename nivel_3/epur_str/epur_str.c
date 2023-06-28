@@ -1,47 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   epur_str.c                                         :+:      :+:    :+:   */
+/*   borrar.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 12:31:45 by pabastid          #+#    #+#             */
-/*   Updated: 2023/06/19 12:43:25 by pabastid         ###   ########.fr       */
+/*   Created: 2023/06/28 12:44:40 by pabastid          #+#    #+#             */
+/*   Updated: 2023/06/28 13:43:11 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	epur_str(char *str)
+int main (int argc, char **argv)
 {
-	int	i = 0;
+	int i = 0;
 
-	while (str[i] && (str[i] == ' ' || str[i] == '\t'))
-			i++;
-	while (str[i])
-	{
-		if ((str[i] == ' ' || str[i] == '\t') && (str[i + 1] == ' ' || str[i + 1] == '\t'))
-			i++;
-		else if ((str[i] == ' ' || str[i] == '\t') && (str[i + 1] != ' ' && str[i + 1] != '\0'))
-		{
-			write (1, " ", 1);
-			i++;
-		}
-		else if ((str[i] == ' ' || str[i] == '\t') && (str[i + 1] == '\0'))
-			break;
-		else
-		{
-			write(1, &str[i], 1);
-			i++;
-		}
-	}
-}
-
-int	main(int argc, char **argv)
-{
 	if (argc == 2)
 	{
-		epur_str(argv[1]);
+		while (argv[1][i] == ' ' || argv[1][i] == '\t')
+			i++;
+		while (argv[1][i])
+		{
+			if ((argv[1][i] == ' ' || argv[1][i] == '\t') && ((argv[1][i+1] == ' ' || argv[1][i+1] == '\t') || (argv[1][i+1] == '\0')))
+				i++;
+			else if (argv[1][i] == ' ' || argv[1][i] == '\t')
+			{
+				write (1, " ", 1);
+				i++;
+			}
+			else if (argv[1][i] != ' ' && argv[1][i] != '\t' && argv[1][i] != '\0')
+			{
+				write (1, &argv[1][i], 1);
+				i++;
+			}
+		}
 	}
 	write (1, "\n", 1);
 	return (0);
