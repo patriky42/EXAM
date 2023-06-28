@@ -1,46 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_capitalizer.c                                  :+:      :+:    :+:   */
+/*   wdmatch.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 13:01:34 by pabastid          #+#    #+#             */
-/*   Updated: 2023/06/28 16:32:28 by pabastid         ###   ########.fr       */
+/*   Created: 2023/06/28 17:15:19 by pabastid          #+#    #+#             */
+/*   Updated: 2023/06/28 17:27:54 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void str_capitalizer (char *str)
+int	ft_strlen(char *s1)
 {
 	int i = 0;
-
-	while (str[i])
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] = str[i] + 32;
-		else if ((str[i] >= 'a' && str[i] <= 'z') && (str[i-1] == ' ' || str[i] == '\t' || i == 0))
-			str[i] = str[i] - 32;
-		write (1, &str[i], 1);
+	while (s1[i])
 		i++;
+	return (i);
+}
+
+void	wdmatch(char *s1, char *s2)
+{
+	int i = 0;
+	int j = 0;
+
+	while (s2[j])
+	{
+		if (s1[i] == s2[j])
+			i++;
+		j++;
+	}
+	if (ft_strlen(s1) == i)
+	{
+		i = 0;
+		while (s1[i])
+		{
+			write (1, &s1[i], 1);
+			i++;
+		}
 	}
 }
 
-int	main (int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	int i = 1;
-
-	if (argc == 1)
-		write (1, "\n", 1);
-	else
+	if(argc == 3)
 	{
-		while (argv[i])
-		{
-			str_capitalizer(argv[i]);
-			i++;
-			write (1, "\n", 1);
-		}
+		wdmatch(argv[1], argv[2]);
 	}
+	write (1, "\n", 1);
 	return (0);
 }
