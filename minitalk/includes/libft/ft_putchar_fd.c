@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strcpy.c                                           :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 23:36:52 by pabastid          #+#    #+#             */
-/*   Updated: 2023/04/14 23:40:15 by pabastid         ###   ########.fr       */
+/*   Created: 2022/09/30 17:29:11 by pabastid          #+#    #+#             */
+/*   Updated: 2022/09/30 18:11:39 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *s1, char *s2)
-{
-	int i = 0;
+#include "libft.h"
 
-	while (s2[i])
-	{
-		s1[i] = s2[i];
-		i++;
-	}
-	s1[i] = '\0';
-	return (s1);
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }
+/*int	main(void)
+{
+	//int = fd;
+	char c = 'a';
+	//fd = open("test.txt", O_RONLY);
+	//ft_putchar_fd (c, fd);
+	ft_putchar_fd (c, 1);
+	return (0);
+}*/
