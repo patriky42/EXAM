@@ -12,7 +12,8 @@ CC = gcc
 RM = rm -f
 CFLAGSS = -Wall -Wextra -Werror
 
-.c.o: ${CC} ${CFLAGS} -I libft.h -c ${<:.c=.o}
+%.o: %.c $(HEADER)
+	${CC} ${CFLAGS} -I libft.h -c $< -o $@
 
 all:		${NAME}
 
