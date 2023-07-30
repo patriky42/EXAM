@@ -6,7 +6,7 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 12:38:43 by pabastid          #+#    #+#             */
-/*   Updated: 2023/07/29 13:19:50 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/07/30 15:05:28 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	swap(t_node **lst, char c)
 		return ;
 	first = *lst;
 	second = first->next;
-	first->next = secod->next;
+	first->next = second->next;
 	second->next = first;
 	second->prev = NULL;
 	first->prev = second;
@@ -38,16 +38,16 @@ void	rotate(t_node **lst, char c)
 	t_node	*last;
 
 	first = *lst;
-	last = ft_last(&first);
+	last = ft_last(lst);
 	if (first->next == NULL)
 		return ;
 	*lst = first->next;
 	(*lst)->prev = NULL; //es lo mismo que: first->next->prev = NULL;
 	last->next = first;
 	first->next = NULL;
-	first-prev = last;
+	first->prev = last;
 	if (c)
-		ft_print("r%c\n", c);
+		ft_printf("r%c\n", c);
 }
 
 void	rrotate(t_node **lst, char c)
@@ -57,6 +57,8 @@ void	rrotate(t_node **lst, char c)
 
 	first = *lst;
 	last = ft_last(&first);
+	if (!first->next)
+		return ;
 	last->prev->next = NULL;
 	first->prev = last;
 	*lst = last;
@@ -66,7 +68,7 @@ void	rrotate(t_node **lst, char c)
 		ft_printf("rr%c\n", c);
 }
 
-void	push(t_node **from, t_node **to)
+/*void	push(t_node **from, t_node **to, char c)
 {
 	t_node	*from_first;
 	t_node	*to_first;
@@ -77,13 +79,9 @@ void	push(t_node **from, t_node **to)
 		return ;
 	if (from_first)
 	{
-		if (from_first->next->prev == NULL)
-			*frrom = NULL;
-		else
-		{
+		if (from_first->next)
 			from_first->next->prev = NULL;
-			*from = from_first->next;
-		}
+		*from = from_first->next;
 		if (to_first != NULL)
 			to_first->prev = from_first;
 		from_first->next = to_first;
@@ -92,21 +90,20 @@ void	push(t_node **from, t_node **to)
 	}
 	if (c)
 		ft_printf("p%c\n", c);
-}
+}*/
 
-/*void	push(t_int **a, t_int **b, char c)
+void	push(t_node **src, t_node **dst, char c)
 {
-	t_int	*temp;
+	t_node	*temp;
 
-	temp = *a;
-	*a = temp->next;
-	if (*a)
-		(*a)->prev = NULL;
-	temp->next = *b;
-	if (*b)
-		(*b)->prev = temp;
-	*b = temp;
+	temp = *src;
+	*src = temp->next;
+	if (*src)
+		(*src)->prev = NULL;
+	temp->next = *dst;
+	if (*dst)
+		(*dst)->prev = temp; //si habia algo en dst, el anterior tiene que ser temp; 
+	*dst = temp;
 	if (c)
 		ft_printf("p%c\n", c);
 }
-*/

@@ -6,7 +6,7 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 13:24:24 by pabastid          #+#    #+#             */
-/*   Updated: 2023/07/29 12:47:52 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/07/30 13:13:40 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,11 @@ int	check_max(char *num)
 	len = ft_strlen(num);
 	if (len > 11)
 		return (0);
-	if ((len == 11 && num[0] != '-') || (len == 11 && ft_strncmp(num, "-2147483648", 11) > 0) || (len == 10 && ft_strcnmp(num, "2147483647", 10) > 0))
-			return (0);
-		return (1);
+	if ((len == 11 && num[0] != '-')
+		|| (len == 11 && ft_strncmp(num, "-2147483648", 11) > 0)
+		|| (len == 10 && ft_strncmp(num, "2147483647", 10) > 0))
+		return (0);
+	return (1);
 }
 
 int	check_dup(char **argv, int i, int size)
@@ -49,7 +51,7 @@ int	check_dup(char **argv, int i, int size)
 	j = i + 1;
 	while (j < size)
 	{
-		if (!strncmp(argv[i], argv[j], 11))
+		if (!ft_strncmp(argv[i], argv[j], 11))
 			return (0);
 		j++;
 	}
@@ -63,10 +65,12 @@ void	check_all(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		if (!check_int(argv[i]) || !check_max(argv[i]) || !check_dup(argv, i, argc))
+		if (!check_int(argv[i])
+			|| !check_max(argv[i])
+			|| !check_dup(argv, i, argc))
 		{
 			write(2, "Error\n", 6);
-			wxit(1);
+			exit(1);
 		}
 		i++;
 	}
