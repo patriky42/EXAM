@@ -6,7 +6,7 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 13:10:15 by pabastid          #+#    #+#             */
-/*   Updated: 2023/07/30 16:14:16 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/08/01 16:36:32 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,10 @@ t_node	*ft_last(t_node **lst);
 int		is_sorted(t_node **lst);
 int		is_min(int n, t_node **lst);
 int		is_max(int n, t_node **lst);
+void	sort_basic(t_node **lst);
+
+//functions->sort_short.c//
+void	if_three(t_node **lst, char c);
+void	if_five(t_node **src, t_node **dst);
 
 #endif

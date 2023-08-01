@@ -6,7 +6,7 @@
 #    By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/27 13:13:45 by pabastid          #+#    #+#              #
-#    Updated: 2023/07/30 15:37:33 by pabastid         ###   ########.fr        #
+#    Updated: 2023/08/01 14:17:29 by pabastid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME			=	push_swap
 MAKEFFILE			=	Makefile
 
 PUSH			=	functions/push_swap.c $(SRCS)
-SRCS			=	functions/check_all.c functions/create_list.c functions/operations.c functions/is_sorted.c
+SRCS			=	functions/check_all.c functions/create_list.c functions/operations.c functions/is_sorted.c functions/sort_short.c
 
 OBJS			=	$(PUSH:.c=.o)
 

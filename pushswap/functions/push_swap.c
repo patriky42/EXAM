@@ -6,7 +6,7 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 13:04:41 by pabastid          #+#    #+#             */
-/*   Updated: 2023/07/30 16:14:20 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/08/01 15:02:57 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ int	main(int argc, char **argv)
 		printf("ordenada\n");
 	if (!is_max(0, &a))
 		printf("no es maximo\n");
+	if (!is_min(3, &a))
+		printf("no es minimo\n");
 	miprintf(&a);
-	swap(&a, 'a');
+	/*swap(&a, 'a');
 	miprintf(&a);
 	rotate(&a, 'a');
 	miprintf(&a);
@@ -51,6 +53,14 @@ int	main(int argc, char **argv)
 	push(&a, &b, 'b');
 	miprintf(&a);
 	printf("*\n");
-	miprintf(&b);
+	miprintf(&b);*/
+	if (argc <= 4)
+	{
+		while (!is_sorted(&a))
+			if_three(&a, 'a');
+	}
+	else if (argc <= 6)
+		if_five(&a, &b, argc - 1);
+	miprintf(&a);
 	return (0);
 }

@@ -6,11 +6,22 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 15:17:06 by pabastid          #+#    #+#             */
-/*   Updated: 2023/07/30 16:11:39 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/08/01 17:20:53 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	sort_basic(t_node **lst)
+{
+	while (!is_sorted(lst))
+	{
+		if (is_max((*lst)->index, lst) || is_max((*lst)->next->index, lst))
+			rotate(lst, 'a');
+		else
+			rrotate(lst, 'a');
+	}
+}
 
 int	is_min(int n, t_node **lst)
 {
