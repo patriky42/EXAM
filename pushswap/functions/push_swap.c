@@ -6,16 +6,16 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 13:04:41 by pabastid          #+#    #+#             */
-/*   Updated: 2023/08/04 10:56:26 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/08/04 11:06:23 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void miprintf(t_node **lst)
+void	miprintf(t_node **lst)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	temp = *lst;
 	while (temp)
@@ -27,8 +27,8 @@ void miprintf(t_node **lst)
 
 int	main(int argc, char **argv)
 {
-	t_node *a;
-	t_node *b;
+	t_node	*a;
+	t_node	*b;
 
 	if (argc == 1)
 		return (0);

@@ -6,14 +6,14 @@
 #    By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/27 13:13:45 by pabastid          #+#    #+#              #
-#    Updated: 2023/08/04 10:35:56 by pabastid         ###   ########.fr        #
+#    Updated: 2023/08/04 11:29:37 by pabastid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 MAKE			=	make --no-print-directory
 NAME			=	push_swap
 
-MAKEFFILE			=	Makefile
+MAKEFILE			=	Makefile
 
 PUSH			=	functions/push_swap.c $(SRCS)
 SRCS			=	functions/check_all.c functions/create_list.c functions/operations.c functions/basic_sorts.c functions/sort_short.c functions/sort_long.c functions/find_and_move.c functions/about_chunks.c
@@ -26,7 +26,7 @@ Printf_DIR		=	./printf
 Printf			=	$(Printf_DIR)/libftprintf.a
 
 RM				=	rm -f
-CFLAGS			=	-Wall -Wextra -Werror -I ./
+CFLAGS			=	-Wall -Wextra -Werror -g -I ./
 
 %.o: %.c push_swap.h $(MAKEFILE)
 	@$(CC) $(CFLAGS) -c $< -o $@
