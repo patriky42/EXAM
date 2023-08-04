@@ -6,7 +6,7 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 12:38:43 by pabastid          #+#    #+#             */
-/*   Updated: 2023/08/01 14:24:24 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/08/04 07:28:36 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	rotate(t_node **lst, char c)
 	if (first->next == NULL)
 		return ;
 	*lst = first->next;
-	(*lst)->prev = NULL; //es lo mismo que: first->next->prev = NULL;
+	(*lst)->prev = NULL;
 	last->next = first;
 	first->next = NULL;
 	first->prev = last;
@@ -62,35 +62,11 @@ void	rrotate(t_node **lst, char c)
 	last->prev->next = NULL;
 	first->prev = last;
 	*lst = last;
-	(*lst)->prev = NULL; //es lo mismo que: last->prev = NULL;
-	(*lst)->next = first; //es lo mismo que: last->next = first;
+	(*lst)->prev = NULL;
+	(*lst)->next = first;
 	if (c)
 		ft_printf("rr%c\n", c);
 }
-
-/*void	push(t_node **from, t_node **to, char c)
-{
-	t_node	*from_first;
-	t_node	*to_first;
-
-	from_first = *from;
-	to_first = *to;
-	if (from == NULL)
-		return ;
-	if (from_first)
-	{
-		if (from_first->next)
-			from_first->next->prev = NULL;
-		*from = from_first->next;
-		if (to_first != NULL)
-			to_first->prev = from_first;
-		from_first->next = to_first;
-		from_first->prev = NULL;
-		*to = from_first;
-	}
-	if (c)
-		ft_printf("p%c\n", c);
-}*/
 
 void	push(t_node **src, t_node **dst, char c)
 {
@@ -102,7 +78,7 @@ void	push(t_node **src, t_node **dst, char c)
 		(*src)->prev = NULL;
 	temp->next = *dst;
 	if (*dst)
-		(*dst)->prev = temp; //si habia algo en dst, el anterior tiene que ser temp; 
+		(*dst)->prev = temp;
 	*dst = temp;
 	if (c)
 		ft_printf("p%c\n", c);

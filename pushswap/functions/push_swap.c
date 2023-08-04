@@ -6,7 +6,7 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 13:04:41 by pabastid          #+#    #+#             */
-/*   Updated: 2023/08/04 06:58:54 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/08/04 08:06:54 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int	main(int argc, char **argv)
 	}
 	else if (argc <= 6)
 		if_five(&a, &b);
+	else if (argc <= 101)
+		if_100(&a, &b);
 	miprintf(&a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:45:26 by pabastid          #+#    #+#             */
-/*   Updated: 2023/08/04 07:22:07 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/08/04 07:36:05 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -18,8 +18,8 @@ void	if_100(t_node **a, t_node **b)
 	maxchunk = 20;
 	while (*a)
 	{
-			sort_chunk(a, b, maxchunk);
-			maxchunk += 20;
+		sort_chunk(a, b, maxchunk);
+		maxchunk += 20;
 	}
 	while (*b)
 	{
