@@ -6,7 +6,7 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 13:04:41 by pabastid          #+#    #+#             */
-/*   Updated: 2023/08/04 08:06:54 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/08/04 10:56:26 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,7 @@ int	main(int argc, char **argv)
 	a = create_list(argc, argv);
 	b = NULL;
 	if (is_sorted(&a))
-		printf("ordenada\n");
-	if (!is_max(0, &a))
-		printf("no es maximo\n");
-	if (!is_min(3, &a))
-		printf("no es minimo\n");
-	miprintf(&a);
-	/*swap(&a, 'a');
-	miprintf(&a);
-	rotate(&a, 'a');
-	miprintf(&a);
-	rrotate(&a, 'a');
-	miprintf(&a);
-	push(&a, &b, 'b');
-	push(&a, &b, 'b');
-	push(&a, &b, 'b');
-	miprintf(&a);
-	printf("*\n");
-	miprintf(&b);*/
+		exit(0);
 	if (argc <= 4)
 	{
 		while (!is_sorted(&a))
@@ -63,6 +46,8 @@ int	main(int argc, char **argv)
 		if_five(&a, &b);
 	else if (argc <= 101)
 		if_100(&a, &b);
+	else if (argc <= 501)
+		if_500(&a, &b);
 	miprintf(&a);
 	return (0);
 }

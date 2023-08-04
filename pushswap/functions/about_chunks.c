@@ -6,7 +6,7 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 15:39:31 by pabastid          #+#    #+#             */
-/*   Updated: 2023/08/04 07:40:41 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/08/04 10:29:57 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ static void	rotate_chunk(t_node **a, t_node **b, int maxchunk, int i)
 
 void	sort_chunk(t_node **a, t_node **b, int maxchunk)
 {
-	t_node	*tmp;
-	int		i;
+	t_node		*tmp;
+	int			i;
+	static int	n = 0;
 
 	i = 0;
 	tmp = *a;
@@ -52,9 +53,12 @@ void	sort_chunk(t_node **a, t_node **b, int maxchunk)
 			rotate_chunk(a, b, maxchunk, i);
 			i = 0;
 			tmp = *a;
+			n = 0;
 		}
 		else
+		{
 			i++;
-		tmp = tmp->next;
+			tmp = tmp->next;
+		}
 	}
 }
