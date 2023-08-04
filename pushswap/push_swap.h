@@ -6,7 +6,7 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 13:10:15 by pabastid          #+#    #+#             */
-/*   Updated: 2023/08/01 16:36:32 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/08/02 17:11:18 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,28 @@ void	check_all(int argc, char **argv);
 t_node	*create_list(int argc, char **argv);
 t_node	*ft_last(t_node **lst);
 
-//functions->is_sorted.c//
+//functions->basic_sorts.c//
 int		is_sorted(t_node **lst);
 int		is_min(int n, t_node **lst);
 int		is_max(int n, t_node **lst);
 void	sort_basic(t_node **lst);
 
+//functions->find_and_move.c//
+int		ft_lstsize(t_node *lst);
+int		find_min(t_node **lst);
+int		find_max(t_node **lst);
+void	min_to_top(t_node **lst, char c);
+void	max_to_top(t_node **a, t_node **b);
+
+//functions->about_chunks.c//
+void		sort_chunk(t_node **a, t_node **b, int maxchunk);
+
 //functions->sort_short.c//
 void	if_three(t_node **lst, char c);
 void	if_five(t_node **src, t_node **dst);
+
+//function->sort_long.c//
+ void	if_100(t_node **a, t_node **b);
+ void	if_500(t_node **a, t_node **b);
 
 #endif
