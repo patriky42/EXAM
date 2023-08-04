@@ -6,7 +6,7 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 15:39:31 by pabastid          #+#    #+#             */
-/*   Updated: 2023/08/04 06:58:13 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/08/04 07:11:53 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ static void	push_chunk(t_node **a, t_node **b, int maxchunk)
 
 static void	rotate_chunk(t_node **a, t_node **b, int maxchunk, int i)
 {
-	while (i <= (ft_lstsize(*a) / 2) &&  i != 0) //en la primera posicion i = 0 no lo hace)
+	while (i <= (ft_lstsize(*a) / 2) && i != 0)
 	{
 		rotate (a, 'a');
 		i--;
 	}
-	while (i > (ft_lstsize(*a) / 2) && i != ft_lstsize(*a)) //hace el rrotate hasta que llegue al largo de la lista y para//
+	while (i > (ft_lstsize(*a) / 2) && i != ft_lstsize(*a))
 	{
 		rrotate (a, 'a');
 		i++;
