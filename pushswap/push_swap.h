@@ -6,7 +6,7 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 13:10:15 by pabastid          #+#    #+#             */
-/*   Updated: 2023/08/04 06:58:51 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/08/04 07:20:34 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int		ft_lstsize(t_node *lst);
 int		find_min(t_node **lst);
 int		find_max(t_node **lst);
 void	min_to_top(t_node **lst, char c);
-void	max_to_top(t_node **a, t_node **b);
+void	max_to_top(t_node **lst, char c);
 
 //functions->about_chunks.c//
 void		sort_chunk(t_node **a, t_node **b, int maxchunk);

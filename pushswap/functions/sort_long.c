@@ -6,7 +6,7 @@
 /*   By: pabastid <pabastid@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:45:26 by pabastid          #+#    #+#             */
-/*   Updated: 2023/08/04 06:58:16 by pabastid         ###   ########.fr       */
+/*   Updated: 2023/08/04 07:22:07 by pabastid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -23,7 +23,7 @@ void	if_100(t_node **a, t_node **b)
 	}
 	while (*b)
 	{
-		max_to_top(a, b);
+		max_to_top(b, 'b');
 		push (b, a, 'a');
 	}
 }
